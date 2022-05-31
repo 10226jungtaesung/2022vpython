@@ -1,16 +1,16 @@
 Web VPython 3.2
-g = shapes.gear(n=20)
-gear_1 = extrusion(path=[vector(-2,0,0),vector(-2,0,0.1)], shape=g, color= color.red)
+g = shapes.gear(n=10,radius=0.5)
+gear_1 = extrusion(path=[vector(-1.5,0,0),vector(-1.5,0,0.1)], shape=g, color= color.red)
 g2 = shapes.gear(n=20)
 gear_2 = extrusion(path=[vector(0,0,0),vector(0,0,0.1)], shape=g2, color=color.green)
 g3 = shapes.gear(n=10,radius=0.5)
 gear_3 = extrusion(path=[vector(1.5,0,0),vector(1.5,0,0.1)], shape=g3, color=color.blue)
 gear_3.rotate(axis=vector(0,0,1),angle=0.5*2*pi/10)
-gear_1.rotate(axis=vector(0,0,1),angle=0.5*2*pi/20)
+gear_1.rotate(axis=vector(0,0,1),angle=0.5*2*pi/10)
 dt = 0.1
 omega = 0.5
 while (True):
     rate(10)
-    gear_1.rotate(axis=vector(0,0,1),angle=omega*dt)
+    gear_1.rotate(axis=vector(0,0,1),angle=2*omega*dt)
     gear_2.rotate(axis=vector(0,0,1),angle=-omega*dt)
     gear_3.rotate(axis=vector(0,0,1),angle=2*omega*dt)
